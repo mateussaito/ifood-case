@@ -1,0 +1,64 @@
+==================================================
+PREMISSAS, REQUISITOS E SOLUÇÃO PROPOSTA
+========================================
+
+1. PREMISSAS
+
+---
+
+1.1. Modelar uma base de dados voltada para análises.
+
+1.2. Armazenar os arquivos fonte de forma estruturada e acessível.
+
+1.3. Desenvolver códigos para ingestão, limpeza e transformação dos dados
+utilizando PySpark.
+
+1.4. A solução proposta deve ser facilmente replicável, considerando
+o método de avaliação do case.
+
+---
+
+2. REQUISITOS
+
+---
+
+2.1. Databricks
+
+Com base nas premissas apresentadas, a única ferramenta necessária para
+a reprodução completa da solução é um workspace no Databricks.
+
+O Databricks disponibiliza o recurso de "Volumes" para armazenamento
+de arquivos, além de oferecer suporte nativo ao PySpark em seus notebooks,
+permitindo a execução de scripts em SQL e Python.
+
+Adicionalmente, toda a solução pode ser desenvolvida de forma online
+e facilmente compartilhada entre colaboradores.
+
+---
+
+3. SOLUÇÃO PROPOSTA
+
+---
+
+3.1. Os dados originais não apresentam grande complexidade ou volume e
+encontram-se bem estruturados. Por esse motivo, foram mantidos em
+tabelas intermediárias, possibilitando reutilização futura em
+novas modelagens ou análises.
+
+3.2. As informações relacionadas às corridas e aos pagamentos foram
+separadas das informações de controle.
+
+```
+ 3.2.1. Tabelas de Dimensão:
+        - dbo_vendor
+        - dbo_payment_type
+        - dbo_rate_code
+        - dbo_taxi_type
+
+ 3.2.2. Tabela Fato:
+        - dbo_run_tripdata
+```
+
+==================================================
+FIM DO DOCUMENTO
+================
